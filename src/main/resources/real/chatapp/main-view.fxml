@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="real.chatapp.MainViewController">
+    <padding>
+        <Insets topRightBottomLeft="10" />
+    </padding>
+
+    <HBox spacing="10">
+        <GridPane alignment="CENTER" vgap="20">
+            <TextField fx:id="usernameInput" promptText="Username" GridPane.rowIndex="0"/>
+            <TextField fx:id="portInput" promptText="Port" GridPane.rowIndex="1"/>
+            <Button fx:id="startButton" text="Start" minWidth="150" GridPane.rowIndex="2" />
+        </GridPane>
+        <Separator orientation="VERTICAL"/>
+        <GridPane hgap="10" vgap="10">
+            <ListView fx:id="chatView" maxHeight="200" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="0" disable="true"/>
+            <TextField fx:id="messageInput" GridPane.columnIndex="0" GridPane.rowIndex="1" disable="true"/>
+            <Button fx:id="sendButton" alignment="CENTER_RIGHT" text="Send" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" onAction="#sendMessage" disable="true"/>
+
+            <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+            <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
+        </GridPane>
+    </HBox>
+</VBox>
