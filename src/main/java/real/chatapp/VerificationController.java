@@ -35,7 +35,7 @@ public class VerificationController implements Initializable{
 
         HttpResponse<String> response = Unirest.post("https://rapidprod-sendgrid-v1.p.rapidapi.com/mail/send")
                 .header("content-type", "application/json")
-                .header("X-RapidAPI-Key", "ed9e7f81d1mshed6d5c1946d2756p14b5d2jsn4684139334da")
+                .header("X-RapidAPI-Key", "mykey")
                 .header("X-RapidAPI-Host", "rapidprod-sendgrid-v1.p.rapidapi.com")
                 .body("{\r\n \"personalizations\": [\r\n {\r\n \"to\": [\r\n {\r\n \"email\": \"" + tfEmail.getText() + "\"\r\n }\r\n ],\r\n \"subject\": \"Verification code\"\r\n }\r\n ],\r\n \"from\": {\r\n \"email\": \"chatfia21@gmail.com\"\r\n },\r\n \"content\": [\r\n {\r\n \"type\": \"text/plain\",\r\n \"value\": \"Ihr Verifizierungscode lautet: "+ code + "\"\r\n }\r\n ]\r\n}")
                 .asString();
